@@ -10,6 +10,7 @@ now = datetime.datetime.now()
 ndw = str(now.day) + "." + str(now.month)
 db = sqlite3.connect("server.db", check_same_thread=False)
 sql = db.cursor()
+e = 0
 sql.execute("""CREATE TABLE IF NOT EXISTS users (
   id TEXT,
   login TEXT,
@@ -57,11 +58,13 @@ def lalala(message):
                     fig, ax = plt.subplots()
                     adwf = -1
                     xsad = []
-                    ysad = []
-                    while adwf != 30:
-                        adwf += 1
+                    while e != 30:
                         d = random.randint(30, 90)
                         ysad.append (d)
+                        e += 1
+                    ysad = []
+                    while adwf != len(xsad):
+                        adwf += 1
                         xsad.append (adwf)
                     ax.plot (xsad, ysad)
                     plt.show()
